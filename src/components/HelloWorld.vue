@@ -56,8 +56,19 @@ const isTextError = computed(() => {
 })
 
 function handleClick(event) {
-  console.log('document');
-
+  if (name.value == null) {
+    name.value = "";
+  }
+  if (email.value == null) {
+    email.value = "";
+  }
+  if (phone.value == null) {
+    phone.value = "";
+  }
+  if (text.value == null) {
+    text.value = "";
+  }
+  event.preventDefault();
 }
 
 const count = ref(0)

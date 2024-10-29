@@ -24,8 +24,7 @@ const isError = defineModel({ type: Boolean })
 }
 
 .error {
-    height: 15px;
-    border: 1px solid black;
+    height: 17px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
