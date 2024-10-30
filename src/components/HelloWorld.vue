@@ -27,7 +27,6 @@
 
     <input type="submit" class="form-control" @click="handleClick">
   </form>
-  <h1>{{ isPhoneError }}</h1>
 
 </template>
 
