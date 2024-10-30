@@ -12,9 +12,9 @@
         placeholder="Email">
     </input-error>
 
-    <input-error v-model="isPhoneError" error-message="Поле не может быть пустым">
+    <input-error v-model="isPhoneError" error-message="Поле не может быть короче 9 символов">
       <input type="text" v-model="phone" class="form-control" :class="{ 'form-error': isPhoneError }"
-        v-maska="'+375 (##) ###-##-##'" placeholder="+375(**) ***-**-**">
+        v-maska="'+375 (##) ###-##-##'" placeholder="+375 (**) ***-**-**">
     </input-error>
 
 
@@ -25,10 +25,9 @@
 
 
 
-
     <input type="submit" class="form-control" @click="handleClick">
-
   </form>
+  <h1>{{ isPhoneError }}</h1>
 
 </template>
 
@@ -49,7 +48,7 @@ const isEmailError = computed(() => {
   return email.value !== null && !/^\w+@[a-zA-Z]{2,}\.[a-zA-Z]{2,7}$/.test(email.value)
 })
 const isPhoneError = computed(() => {
-  return Boolean(phone.value !== null && !phone.value && phone.value.length != 3)
+  return Boolean(phone.value !== null && phone.value.length < 18 )
 })
 const isTextError = computed(() => {
   return Boolean(text.value !== null && !text.value)

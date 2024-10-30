@@ -7,18 +7,17 @@
                 <div class="modal-title">
                     <dock-window style=" font-size: 34px;"></dock-window>
                     <p>{{ props.title }}</p>
-                    <v-btn icon="window-close" variant="text" @click="close"> </v-btn>
                 </div>
                 <div class="modal-content">
                     <slot></slot>
                 </div>
                 <div class="modal-button">
-                    <v-btn color="#546e7a" class="modal-close" variant="tonal" density="comfortable" @click="close">{{
+                    <button color="#546e7a" class="modal-close" variant="tonal" density="comfortable" @click="close">{{
                         props.cancelTitle }}
-                    </v-btn>
-                    <v-btn color="#546e7a" :disabled="okDisable" class="modal-apply" density="comfortable"
+                    </button>
+                    <button color="#546e7a" :disabled="okDisable" class="modal-apply" density="comfortable"
                         @click="ok">{{
-                            props.okTitle }}</v-btn>
+                            props.okTitle }}</button>
                 </div>
             </div>
         </div>
@@ -133,7 +132,8 @@ function ok() {
 
 .modal-close {
     padding: 5px 15px;
-    color: red
+    color: red;
+    border: none;
 }
 
 .modal-apply {
@@ -141,6 +141,7 @@ function ok() {
     padding: 5px 15px;
     color: white;
     background-color: #546e7a;
+    border: none;
 }
 
 .modal p {
